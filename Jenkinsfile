@@ -10,5 +10,10 @@ pipeline {
                 git 'https://github.com/jackiekwofie/CarRentWebApp.git'
             }
         }
+        stage ("Build with maven") {
+            steps {
+                sh "mvn clean test package"
+            }
+        }
     }
 }
